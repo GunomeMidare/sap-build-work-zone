@@ -5,6 +5,9 @@
 ](https://discovery-center.cloud.sap/missiondetail/3283/3378/)
 
 ---
+### Blogs 📰
+- [Enabling Access to On-Premise S/4HANA Applications in SAP Build Work Zone, Standard Edition](https://community.sap.com/t5/technology-blog-posts-by-members/enabling-access-to-on-premise-s-4hana-applications-in-sap-build-work-zone/ba-p/13935816)
+
 
 ### Content Management 📰
 #### Content Federation
