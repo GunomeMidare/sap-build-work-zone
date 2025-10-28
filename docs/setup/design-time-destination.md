@@ -5,7 +5,12 @@
 The goal of this file is to document how to create the design-time destination. The design-time destination is used to fetch the federated content from the content provider system during design-time.
 
 ## References 📝
+- [3416482 - Configure design time destination for on-prem solution SAP Build Work Zone, standard edition](https://me.sap.com/notes/3416482/E)
 - [3501486 - Launchpad Content Exposed with version 2 not updated in SAP Build Workzone, Standard](https://me.sap.com/notes/3501486/E)
+- [Create Design-Time destination](https://help.sap.com/docs/SUPPORT_CONTENT/fioritech/5173040119.html?locale=en-US)
+
+## Prerequisites 📝
+- Decide on the usage of version 1 or version 2 for Content Exposure
 
 ---
 
@@ -15,7 +20,7 @@ The goal of this file is to document how to create the design-time destination. 
 
     | Field Name        | Value                                                                 | Remarks                                                                                     |
     |-------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
-    | Names             | 4hanadt                                                               |                                                                                             |  
+    | Names             | 4hanadt                                                               | SAP recommends to add the suffix `dt` to the name. The name must contain only lowercase letters and must not contain the underscore (_) character. |  
     | Type              | HTTP                                                                  |                                                                                             |
     | Description       | SAP S/4HANA system                                                    |                                                                                             |
     | URL               | http://s4hana:44300/sap/bc/ui2/cdm3/entities                          | For Version 2 use: <host>/sap/bc/http/ui2/flp_content_exposure/entities                     |
@@ -29,6 +34,7 @@ The goal of this file is to document how to create the design-time destination. 
     | Field Name        | Value                                                                 |
     |-------------------|-----------------------------------------------------------------------|
     | sap-client        | <client of your SAP S/4HANA system>                                   |
+
 
 > [!Note]
 > If version 2 is to be used, create a new* design time destination and include the service endpoint URL <host>/sap/bc/http/ui2/flp_content_exposure/entities.
