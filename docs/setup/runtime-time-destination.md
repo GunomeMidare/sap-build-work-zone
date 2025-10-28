@@ -6,6 +6,7 @@ The goal of this file is to document how to create the run-time destination. The
 
 ## References 📝
 - [Create Runtime destination](https://help.sap.com/docs/SUPPORT_CONTENT/fioritech/5173040124.html?locale=en-US)
+- [3416510 - Configure Runtime destination for on-prem solution SAP Build Work Zone, standard edition](https://me.sap.com/notes/3416510/E)
 
 ## Prerequisites 📝
 - XXXX
