@@ -7,6 +7,7 @@ The goal of this file is to document the SAP Build WOrk Zone Free Tier applicati
 ## References 📝
 - [3434634 - SAP Build Work Zone Free Sevice Plan limit reached](https://me.sap.com/notes/0003434634)
 - [Discovery Center: SAP Build Work Zone, standard edition](https://discovery-center.cloud.sap/serviceCatalog/sap-build-work-zone-standard-edition?region=all)
+- [Using an Account with a Free Service Plan](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/using-account-with-free-service-plan?locale=en-US)
 
 ### SAP Build Work Zone Free Tier
 SAP Build Work Zone's free tier is part of the SAP Business Technology Platform (BTP) free tier model and applies specifically to the standard edition. The advanced edition is not available in the free tier or trial accounts. 
