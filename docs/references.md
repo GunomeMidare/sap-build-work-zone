@@ -8,4 +8,4 @@
 
 ### Content Management 📰
 #### Content Federation
-- [Enhance Your SAP Build Work Zone Site with Federated SAP S/4HANA Content]()
+- [Enhance Your SAP Build Work Zone Site with Federated SAP S/4HANA Content](https://developers.sap.com/mission.launchpad-s4hana.html)
