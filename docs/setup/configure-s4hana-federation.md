@@ -31,4 +31,30 @@ If you do not activate the allowlist, SAP Build Work Zone defaults to a more res
 
 In this example you see it is currently set to `Logging mode`. This means that connections are only logged, but not checked. With this setting, connectivity from your SAP BTP trial account will work. However, this is not a secure setting. In a productive environment, you would need to add the patterns for your SAP Build Work Zone to the allowlist and then set the scenario to Active check mode.
 
+---
+
+### Set customizing parameter EXPOSURE_SYSTEM_ALIASES_MODE 🛠️
+The parameter `EXPOSURE_SYSTEM_ALIASES_MODE` defines how to handle system aliases during content exposure. In an embedded deployment of the SAP Fiori front-end server, all apps run on the same server. Therefore, system aliases can be cleared during exposure. In a hub deployment in contrast, they might come from different back-end systems and each back-end system may have several aliases. Therefore, you need to map these aliases to the runtime destinations manually after creating the content provider.
+
+> [!Important]
+> This parameter must only be set in an embedded scenario where the SAP Fiori front-end server is deployed into the AS ABAP of the SAP S/4HANA system. This is the case in the SAP S/4HANA trial system.
+
+#### Prerequisites
+- A customizing request
+
+#### Aditional Information
+- [3203309 - "Do not make any change" info occurred when change parameter EXPOSURE_SYSTEM_ALIASES_MODE  to CLE](https://me.sap.com/notes/3203309/E)
+
+#### Set the Parameter
+1. Start transaction `/n/UI2/FLP_CUS_CO`.
+2. Click `New Entries` to create one new entry.
+3. Enter the FLP Property ID: `EXPOSURE_SYSTEM_ALIASES_MODE` with property value: `CLEAR`.
+
+    <img width="703" height="333" alt="image" src="https://github.com/user-attachments/assets/ad5e86c1-beb2-4bb8-bfef-437c688b4c60" />
+
+4. Click Save
+
+    <img width="1495" height="534" alt="image" src="https://github.com/user-attachments/assets/60339a1b-b2a4-40ad-b00b-a4e566ac8861" />
+
+
 
