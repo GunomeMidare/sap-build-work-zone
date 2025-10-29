@@ -16,6 +16,9 @@ The goal of this file is to document how to create a Content Provider in **SAP B
 ### Create a Content Provider 🛠️
 1. In SAP Build Work Zone, standard edition, go to `Channel Manager`.
 2. Select `New -> Content Provider`.
+
+   <img width="610" height="800" alt="image" src="https://github.com/user-attachments/assets/433d01aa-2f68-480a-9d41-e669b8dbb136" />
+
 3. Enter the following information:
 
 | Field                                                                      | Value    | Remarks                                                                                                                                                |
@@ -30,4 +33,4 @@ The goal of this file is to document how to create a Content Provider in **SAP B
 | **Use the Identity Provisioning service to provision user authorizations** |          | Using Identity Provisioning service is recommended for productive scenarios as it allows to reuse user-role assignments from the content provider and reduces manual effort. |
 | **Include group and catalog assignments to roles**                         |          | Use this toggle switch depending on how the provider is modeled<br><br>**Disable this feature** to include all groups and catalogs in this site, without considering their assignment to roles.<br><br>**Enable this feature** to include only groups and catalogs in this site, that have been directly assigned to roles. |
    
-5. Click `Save`.
+4. Click `Save`.
