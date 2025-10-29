@@ -12,6 +12,13 @@ The goal of this file is to document how to expose Federation Content from SAP S
 #### Blogs, SAP Help and other Sources
 - [SAP Help: Exposing Launchpad Content to SAP BTP](https://help.sap.com/docs/ABAP_PLATFORM_NEW/a7b390faab1140c087b8926571e942b7/8216497368a9417f8008db8eb63fab72.html?version=202310.003&locale=en-US)
 - [Developer Tutorial: Expose Federation Content from SAP S/4HANA](https://developers.sap.com/tutorials/cp-launchpad-federation-expose-content.html)
+
+## Prerequisites 📝
+- You also need to make sure that the user which does the content exposure has the right role. 
+  -  The permissions to run the content exposure are delivered with the role SAP_FLP_ADMIN
+- Verify that the page cache is turned on for the user. 
+
+
 ---
 
 ### Select SAP Fiori Content for Exposure using transaction 
@@ -23,3 +30,5 @@ The goal of this file is to document how to expose Federation Content from SAP S
 
 3. Choose which roles you want to provide to SAP BTP.
 4. Save your defined roles by clicking on `Save Selected Roles`. The role selection must be saved first before exposing. Otherwise you will expose the last saved role selection.
+
+### Expose Selected Roles
