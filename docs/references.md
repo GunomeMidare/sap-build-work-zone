@@ -1,5 +1,10 @@
 ## SAP Build Work Zone 📝
 
+
+### General
+- [SAP Help: What Is SAP Build Work Zone, standard edition?](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/what-is-sap-build-work-zone-standard-edition?locale=en-US)
+- [SAP Help: Restrictions](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/restrictions-general?locale=en-US)
+
 ### SAP Discovery Center Missions 📰
 - [Establish a central entry point with SAP Build Work Zone, standard edition (formerly SAP Launchpad service)
 ](https://discovery-center.cloud.sap/missiondetail/3283/3378/)
@@ -11,4 +16,4 @@
 
 ### Content Management 📰
 #### Content Federation
-- [Enhance Your SAP Build Work Zone Site with Federated SAP S/4HANA Content](https://developers.sap.com/mission.launchpad-s4hana.html)
+- [Developer Tutorial: Enhance Your SAP Build Work Zone Site with Federated SAP S/4HANA Content](https://developers.sap.com/mission.launchpad-s4hana.html)
