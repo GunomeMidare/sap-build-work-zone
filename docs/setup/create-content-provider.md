@@ -10,6 +10,7 @@ The goal of this file is to document how to create a Content Provider in **SAP B
 
 #### SAP Notes
 - [3382241 - Content is being updated: Work Zone update content is stuck](https://me.sap.com/notes/3382241/E)
+- [3389613 - Error "<Internal>: Could not create content due to an internal error. Please try again later." occur](https://me.sap.com/notes/3389613/E)
 
 ## Prerequisites 📝
 - You have created a Design-Time and Runtime Destination
