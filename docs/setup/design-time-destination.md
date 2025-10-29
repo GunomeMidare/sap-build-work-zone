@@ -12,6 +12,7 @@ The goal of this file is to document how to create the design-time destination. 
 
 ## Prerequisites 📝
 - Decide on the usage of version 1 or version 2 for Content Exposure
+- You need to know the Virtual Host of the Cloud Connector
 
 ---
 
