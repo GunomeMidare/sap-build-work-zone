@@ -17,3 +17,6 @@
 ### Content Management 📰
 #### Content Federation
 - [Developer Tutorial: Enhance Your SAP Build Work Zone Site with Federated SAP S/4HANA Content](https://developers.sap.com/mission.launchpad-s4hana.html)
+
+### Identity Provisioning 📰
+- [Configure Integration with the Identity Provisioning Service](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/configure-integration-with-identity-provisioning-service?locale=en-US)
