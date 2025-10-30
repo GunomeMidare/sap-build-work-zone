@@ -57,9 +57,17 @@ The parameter `EXPOSURE_SYSTEM_ALIASES_MODE` defines how to handle system aliase
     <img width="1495" height="534" alt="image" src="https://github.com/user-attachments/assets/60339a1b-b2a4-40ad-b00b-a4e566ac8861" />
 
 
-### Check activation status of cdm3 service 🛠️
+### Check activation status of Content service 🛠️
+- [3501486 - Launchpad Content Exposed with version 2 not updated](https://me.sap.com/notes/3501486/E)
+- 
+
+#### Version 1
+
 Check the activation status of service `/sap/bc/ui2/cdm3` is activated in the SAP S/4HANA system.
 1. Start transaction `SICF`.
 2. Enter `cdm3` in `Service Name` and click the `Execute` icon.
+3. Verify if the service is active.
 
+#### Version 2
+Version 2 uses a HTTP service, you might need to activate it first in the S/4 system using transaction `UCON_HTTP_SERVICES`. The name of the service is `/UI2/FLP_CONTENT_EXPOSURE`.
 
