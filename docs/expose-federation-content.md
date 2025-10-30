@@ -8,6 +8,7 @@ The goal of this file is to document how to expose Federation Content from SAP S
 #### SAP Notes
 - [3668043 - Unable to schedule job for exposing S/4HANA content to BTP Work Zone using program /UI2/CDM3_EXP_SCOPE](https://me.sap.com/notes/3668043/E)
 - [3345119 - Expose Launchpad Content to SAP BTP - Exposure Version 2](https://me.sap.com/notes/3345119)
+- [3602795 - Not able to pull the content to SAP BTP from SAP S/4 system](https://me.sap.com/notes/3602795/E)
 
 #### Blogs, SAP Help and other Sources
 - [SAP Help: Exposing Launchpad Content to SAP BTP](https://help.sap.com/docs/ABAP_PLATFORM_NEW/a7b390faab1140c087b8926571e942b7/8216497368a9417f8008db8eb63fab72.html?version=202310.003&locale=en-US)
