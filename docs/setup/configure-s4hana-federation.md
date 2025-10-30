@@ -13,7 +13,7 @@ The goal of this file is to document how to configure an S/4HANA System for Cont
 
 
 ## Prerequisites 📝
-- XXXX
+- Access to UCOCCOCKPIT transaction: `UCON_CHW` HTTP Allowlist Scenario.
 
 ---
 
