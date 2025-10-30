@@ -71,3 +71,6 @@ Check the activation status of service `/sap/bc/ui2/cdm3` is activated in the SA
 #### Version 2
 Version 2 uses a HTTP service, you might need to activate it first in the S/4 system using transaction `UCON_HTTP_SERVICES`. The name of the service is `/UI2/FLP_CONTENT_EXPOSURE`.
 
+<img width="1486" height="391" alt="image" src="https://github.com/user-attachments/assets/12558938-a61e-4685-9ba0-e288dec2f974" />
+
+
