@@ -62,7 +62,7 @@ The parameter `EXPOSURE_SYSTEM_ALIASES_MODE` defines how to handle system aliase
 - 
 
 #### Version 1
-
+- [3602795 - Not able to pull the content to SAP BTP from SAP S/4 syste](https://me.sap.com/notes/3602795/E)
 Check the activation status of service `/sap/bc/ui2/cdm3` is activated in the SAP S/4HANA system.
 1. Start transaction `SICF`.
 2. Enter `cdm3` in `Service Name` and click the `Execute` icon.
