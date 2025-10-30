@@ -1,9 +1,11 @@
 ## SAP Build Work Zone 📝
 
-
 ### General
 - [SAP Help: What Is SAP Build Work Zone, standard edition?](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/what-is-sap-build-work-zone-standard-edition?locale=en-US)
 - [SAP Help: Restrictions](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/restrictions-general?locale=en-US)
+
+### SAP Build Work Zone Setup
+- [SAP Build Work Zone: Initial Setup](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/initial-setup?locale=en-US)
 
 ### SAP Discovery Center Missions 📰
 - [Establish a central entry point with SAP Build Work Zone, standard edition (formerly SAP Launchpad service)
