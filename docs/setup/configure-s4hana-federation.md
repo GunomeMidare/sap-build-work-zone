@@ -5,7 +5,7 @@
 The goal of this file is to document how to configure an S/4HANA System for Content Federation to **SAP Build Work Zone**. 
 
 ## References 📝
-- 
+- [Configure Your SAP S/4HANA System for Content Federation](https://developers.sap.com/tutorials/cp-launchpad-federation-prepares4hana.html)
 
 #### SAP Notes
 - [2389051 - ICF service for Clickjacking Framing Protection is not active](https://me.sap.com/notes/2389051/E)
@@ -18,7 +18,6 @@ The goal of this file is to document how to configure an S/4HANA System for Cont
 ---
 
 ### Verify Clickjacking Protection Settings 🛠️
-
 
 Since the SAP S/4HANA apps are integrated into SAP Build Work Zone using iFrames, you need to configure an allowlist to protect your system against clickjacking attacks. The allowlist service is an ABAP-wide service to implement protections. You can manage such allowlist scenarios with the Unified Connectivity Framework (UCON Framework) to optimize the protection of your RFC and HTTP(S) communication against unauthorized access. To allow SAP Build Work Zone to consume data from your SAP S/4HANA system, you should add your BTP account to the allowlist for Clickjacking Framing Protection.
 
@@ -52,7 +51,7 @@ The parameter `EXPOSURE_SYSTEM_ALIASES_MODE` defines how to handle system aliase
 
     <img width="703" height="333" alt="image" src="https://github.com/user-attachments/assets/ad5e86c1-beb2-4bb8-bfef-437c688b4c60" />
 
-4. Click Save
+4. Click `Save`.
 
     <img width="1495" height="534" alt="image" src="https://github.com/user-attachments/assets/60339a1b-b2a4-40ad-b00b-a4e566ac8861" />
 
