@@ -38,3 +38,8 @@ The goal of this file is to document how to create a Content Provider in **SAP B
 | **Include group and catalog assignments to roles**                         |          | Use this toggle switch depending on how the provider is modeled<br><br>**Disable this feature** to include all groups and catalogs in this site, without considering their assignment to roles.<br><br>**Enable this feature** to include only groups and catalogs in this site, that have been directly assigned to roles. |
    
 4. Click `Save`.
+
+### Map Alias 🛠️
+
+<img width="2175" height="727" alt="image" src="https://github.com/user-attachments/assets/8aa67986-376d-4231-a567-7fb4d8f4a287" />
+
