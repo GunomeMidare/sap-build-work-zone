@@ -20,7 +20,7 @@
 #### Content Federation
 - [Developer Tutorial: Enhance Your SAP Build Work Zone Site with Federated SAP S/4HANA Content](https://developers.sap.com/mission.launchpad-s4hana.html)
 - [Content Providers - On-Premise Solutions](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/content-providers-on-premise-solutions?q=channel&locale=en-US)
-
+- [Federation of Remote Content Providers](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/federation-of-remote-content-providers?locale=en-US0)
 
 ### Identity Provisioning 📰
 - [Configure Integration with the Identity Provisioning Service](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/configure-integration-with-identity-provisioning-service?locale=en-US)
