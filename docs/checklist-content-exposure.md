@@ -7,7 +7,7 @@
 - [x] Set customizing parameter `EXPOSURE_SYSTEM_ALIASES_MODE`. 🟢
 - [x] Check activation status of `cdm3` (cFLP Exposure) service (Required for version 1). 🟢
 - [x] Activate HTTP Service: `/UI2/FLP_CONTENT_EXPOSURE` via transaction `UCON_HTTP_SERVICES` (Required for version 2). 🟢
-- [x] Make sure that ICF node `/sap/bc/http` is activated using transaction SICF. 🟢
+- [x] Make sure that ICF node `/sap/bc/http` is activated using transaction SICF (Required for version 2). 🟢
 
 ### 🔧 Authorization for working with Content Exposure for an S/4HANA System
 #### S/4HANA System
