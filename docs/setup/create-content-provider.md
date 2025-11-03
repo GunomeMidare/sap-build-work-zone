@@ -40,6 +40,12 @@ The goal of this file is to document how to create a Content Provider in **SAP B
 4. Click `Save`.
 
 ### Map Alias 🛠️
+When using V2, after creating the content provider, it is necessary to map the alias FLP_STANDALONE to the default runtime destination. 
+- [Federation of Remote Content Providers](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/federation-of-remote-content-providers?locale=en-US0)
+- [Mapping App and Card Aliases to Destinations](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/mapping-app-and-card-aliases-to-destinations?locale=en-US)
+- [3345119 - Expose Launchpad Content to SAP BTP - Exposure Version 2](https://me.sap.com/notes/3345119/E)
+
+1. Click `Map Alias` and map the alias `FLP_STANDALONE` to the default runtime destination.
 
 <img width="2175" height="727" alt="image" src="https://github.com/user-attachments/assets/8aa67986-376d-4231-a567-7fb4d8f4a287" />
 
