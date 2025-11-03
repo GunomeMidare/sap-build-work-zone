@@ -36,6 +36,7 @@
 > Create a content provider for your SAP S/4HANA system in SAP Build Work Zone provider manager and add the exposed roles to the My Content area and to the Work Zone site, so that end users can access the federated apps and groups.
 #### SAP Build Work Zone Application
 - [x] Create a new Content Provider. 🟢
+  - [x] For version 2: Map alias FLP_STANDALONE to the default runtime destination. 🟢
 - [x] Select roles to usage. 🟢
 - [x] Check content items in selected roles. 🟢
 - [x] Assign roles to site. 🟢
