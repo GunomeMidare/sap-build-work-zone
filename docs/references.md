@@ -26,6 +26,9 @@
 ##### Content Federation using Hub Deployment
 - [3579088 - Content Federation Using Hub Deployment in SAP Build Work Zone](https://me.sap.com/notes/0003579088)
 
+##### Principal Propagation
+- []()
+
 ### Identity Provisioning 📰
 - [Configure Integration with the Identity Provisioning Service](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/configure-integration-with-identity-provisioning-service?locale=en-US)
 
