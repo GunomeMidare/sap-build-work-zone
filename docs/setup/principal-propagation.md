@@ -12,6 +12,7 @@ The goal of this file is to document how to setup Prinicpal Propagation for **SA
 - [3580783 - Logon Popup Appears in SAP Build Work Zone](https://me.sap.com/notes/3580783/E)
 - [3509758 - The Cloud Connector has not been configured for principal propagation. Please configure it or](https://me.sap.com/notes/3509758/E)
 - [3416510 - Configure Runtime destination for on-prem solution SAP Build Work Zone, standard edition](https://me.sap.com/notes/3416510/E)
+- [3657871 - [Cloud Integration] Principal Propagation for on-premise S4, explained](https://me.sap.com/notes/3657871/E)
 
 ## Prerequisites 📝
 - SAP IAS (Identity Authentication Service) configured as the IdP for BTP.
