@@ -52,7 +52,7 @@ System Level
 ##### Set Up Trust for Principal Propagation > Configure Trusted Entities in the Cloud Connector
 In this task, you synchronize the SAP BTP subaccount to support principal propagation. By default, the Cloud Connector does not trust any entity that issues tokens for principal propagation.
 - [CC: Setting Up Trust for Principal Propagation](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/b559acddd01241c0ab0cce5a61862be3.html?locale=en-US)
-- 
+- [Set Up Trust](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/set-up-trust-for-principal-propagation?locale=en-US)
 1. XXXX
 2. XXXX
 
