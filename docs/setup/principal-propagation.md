@@ -7,12 +7,14 @@ The goal of this file is to document how to setup Prinicpal Propagation for **SA
 ## References 📝
 - [SAP Help: Configure SSO](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/configure-sso?locale=en-US)
 - [Principal Propagation from SAP BTP Applications to On-Premise Systems Using Corporate IdP Tokens](https://help.sap.com/docs/btp/sap-business-technology-platform/configure-principal-propagation-from-btp-applications-to-on-premise-systems-using-corporate-idp-tokens?locale=en-US)
+- [How to troubleshoot Cloud Connector principal propagation over HTTPS](https://help.sap.com/docs/SUPPORT_CONTENT/appservices/3361376259.html?locale=en-US)
 
 #### SAP Notes
 - [3580783 - Logon Popup Appears in SAP Build Work Zone](https://me.sap.com/notes/3580783/E)
 - [3509758 - The Cloud Connector has not been configured for principal propagation. Please configure it or](https://me.sap.com/notes/3509758/E)
 - [3416510 - Configure Runtime destination for on-prem solution SAP Build Work Zone, standard edition](https://me.sap.com/notes/3416510/E)
 - [3657871 - [Cloud Integration] Principal Propagation for on-premise S4, explained](https://me.sap.com/notes/3657871/E)
+- [3209209 - Client Certificate Authentication(X.509) fails with error: 'no applicable certificate mapping rule ](https://me.sap.com/notes/3209209/E)
 
 ## Prerequisites 📝
 - SAP IAS (Identity Authentication Service) configured as the IdP for BTP.
@@ -27,6 +29,7 @@ Subaccount Level
 - [ ] Connect Cloud Connector to SAP BTP subaccount. 🟢
 - [ ] Set Up Trust for Principal Propagation - Configure Trusted Entities in the Cloud Connector. ⚪
 - [ ] Make sure you choose the principal type X.509 Certificate (strict usage) in the corresponding system mapping. ⚪
+- [ ] Configure the pattern for the Common Name (CN) that is used for the short-lived certificates for principal propagation. ⚪
 
 System Level
 - [ ] Make sure the system certificate exists. The SSL handshake between SAP Cloud Connector and the ABAP system is performed through the system certificate. ⚪
@@ -84,16 +87,16 @@ In this configuration you define amongst other settings the Principal Type. This
     <img width="684" height="310" alt="image" src="https://github.com/user-attachments/assets/6fa44279-464f-4515-895c-f426661f99ea" />
 6. in the next step select as `Authentication Type` select: `X.509 Client Certificate`.
 
-
 > [!Note]
 > Defines what kind of principal is sent to the backend within the HTTP request. For the principal type X.509 Certificate (if a principal is sent from the cloud side), the principal is injected as an HTTP header (SSL_CLIENT_CERT) and forwarded to the backend. There, depending on the backed configuration, it can be used for authentication.
 
-
-- [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
-
 ##### Configure Subject Patern
+In this task, you configure the pattern for the Common Name (CN) that is used for the short-lived certificates for principal propagation.
 - [Configure Subject Patern](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/configure-subject-patterns-for-principal-propagation?locale=en-US)
 - [CC: Configuring the Principal Propagation Subject Pattern](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/bb66d36ae7184a8f811ffb7d9ee3d135.html?locale=en-US)
+
+##### 
+- [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
 
 ### ABAP System
 
