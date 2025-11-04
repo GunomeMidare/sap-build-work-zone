@@ -38,6 +38,10 @@
 - [3672685 - Seamless Navigation from Work Zone to SuccessFactors is not Working](https://me.sap.com/notes/3672685/E)
 
 ### Product Specific 📰
+
+#### S/4HANA
+- [SAP Build Work Zone, Standard Edition Integration with SAP S/4HANA](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/98a3f0830f084aefb5ea75fb20959af5.html?locale=en-US)
+
 #### Ariba 
 - [Adding SAP Ariba Procurement Planning Apps to a Central Launchpad](https://help.sap.com/docs/SAP_PROCUREMENT_PLANNING/aad8ff6e4e0c404591864a751c877d34/d5e2749509ac47dbbe5e571350f2152f.html?locale=en-US)
 - [Mission: Define Your Dashboard for Procurement](https://discovery-center.cloud.sap/missiondetail/4183/4434/)
