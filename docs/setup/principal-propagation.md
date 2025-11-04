@@ -37,6 +37,9 @@ System Level
 - [ ] Set the profile parameter in the instance profile: `icm/HTTPS/verify_client` to `Verify_Client=1`. 🟢
 - [ ] Setup Rule Based User mapping – rule-based mapping of certificates is the recommended approach (based on the `CERTRULE` transaction). ⚪
     - [ ] Set the profile parameter in the instance profile: `login/certificate_mapping_rulebased` to `1`. ⚪
+- [ ] icm/trusted_reverse_proxy_<x> in S4 must be configured. ⚪
+- [ ] Rule Based Certificate Mapping for the user identity must be configured. ⚪
+- [ ] Mapped user must has the same, unique identifier. ⚪
 
 #### SAP BTP Subaccount
 - [ ] The runtime destination authentication method has been set to `Principal Propagation`. ⚪
@@ -87,6 +90,10 @@ In this configuration you define amongst other settings the Principal Type. This
 
 
 - [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
+
+##### Configure Subject Patern
+- [Configure Subject Patern](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/configure-subject-patterns-for-principal-propagation?locale=en-US)
+- [CC: Configuring the Principal Propagation Subject Pattern](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/bb66d36ae7184a8f811ffb7d9ee3d135.html?locale=en-US)
 
 ### ABAP System
 
