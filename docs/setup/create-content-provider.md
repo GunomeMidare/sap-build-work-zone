@@ -7,6 +7,7 @@ The goal of this file is to document how to create a Content Provider in **SAP B
 ## References 📝
 - [SAP Help: Create a Content Provider](https://help.sap.com/docs/joule/integrating-joule-with-sap/configure-destinations?locale=en-US#create-a-content-provider)
 - [Developer Tutorial: Add Federated SAP S/4HANA Roles to Your SAP Build Work Zone Site](https://developers.sap.com/tutorials/cp-launchpad-federation-consumption.html)
+- [Integrgation Guide: WZ: Creating a Content Provider](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/70e980150c174778aff9f698fde04307.html?locale=en-US)
 
 #### SAP Notes
 - [3382241 - Content is being updated: Work Zone update content is stuck](https://me.sap.com/notes/3382241/E)
