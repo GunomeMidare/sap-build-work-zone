@@ -95,6 +95,11 @@ In this task, you configure the pattern for the Common Name (CN) that is used fo
 - [Configure Subject Patern](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/configure-subject-patterns-for-principal-propagation?locale=en-US)
 - [CC: Configuring the Principal Propagation Subject Pattern](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/bb66d36ae7184a8f811ffb7d9ee3d135.html?locale=en-US)
 
+##### Create & Download Short-Lived Sample Certificate
+The short-lived sample certificate in SAP Cloud Connector (SCC) is generated in the context of principal propagation setup over HTTPS. It serves as a template to create certificate mapping rules (e.g., via transaction CERTRULE) in your on-premise ABAP backend systems. This certificate is not the actual short-lived certificate used in runtime (which is dynamically generated per user session); instead, it's a sample for configuration purposes. 
+
+
+
 ##### 
 - [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
 
