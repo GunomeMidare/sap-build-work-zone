@@ -49,9 +49,14 @@ System Level
 
 ### Cloud Connector
 
-##### XXXX
+##### Set Up Trust for Principal Propagation > Configure Trusted Entities in the Cloud Connector
+In this task, you synchronize the SAP BTP subaccount to support principal propagation. By default, the Cloud Connector does not trust any entity that issues tokens for principal propagation.
+- [CC: Setting Up Trust for Principal Propagation](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/b559acddd01241c0ab0cce5a61862be3.html?locale=en-US)
+- 
 1. XXXX
 2. XXXX
+
+- [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
 
 ### ABAP System
 
@@ -66,9 +71,6 @@ To enable secure HTTPS communication from the SAP BTP ABAP Environment (or any A
 4. In the dialog window, choose the certificate file representing the public key of the issuer of the system certificate, for example, in DER format. Typically, this is a CA certificate. If you decide to use a self-signed system certificate, it is the system certificate itself.
 5. The details of this certificate are shown in the section above. Using the example certificate data, you would see CN=MyCompany CA, O=Trust Community, C=DE as subject.
 6. If you are sure that you are importing the correct certificate, you can integrate the certificate into the certificate list by choosing the `Add to Certificate List` button.
-
-
-
 
 
 ##### Set or verify profile parameter `icm/HTTPS/verify_client`:
