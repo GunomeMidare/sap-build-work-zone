@@ -125,7 +125,7 @@ Cloud Connector must present a valid certificate (short-lived user cert) for Pri
 > Client certificate is required — the server demands a valid X.509 certificate from the client (Cloud Connector) during TLS handshake. 
 
 ##### Set or verify profile parameter `login/certificate_mapping_rulebased`: 
-Rule-based certificate mapping (transaction CERTRULE) enables the mapping of users from parts of the subject or the subject alternative name of an X.509 certificate for a given issuer to the user ID or alias of a user master record.
+When a user logs on to an ABAP system via HTTPS with a personal X.509 client certificate, the system must map the certificate to an SAP user ID. With the parameter set to 1, the system evaluates rules you define in transaction CERTRULE instead of looking up the old manual table USREXTID.
 - [Creating Rules for Certificate Mapping](https://help.sap.com/docs/SAP_NETWEAVER_AS_ABAP_751_IP/d528eef3dca14679bcb47b069aa17a9d/7c6d4b04370e40319ad790b554aa9a0b.html?version=7.51.0&locale=en-US)
 
 1. Use ABAP Report `RSPFPAR` (For Selective Parameters)
@@ -133,9 +133,9 @@ Rule-based certificate mapping (transaction CERTRULE) enables the mapping of use
 3. Click `Execute`.
 4. Verify that the value is `1` (enable rule-based X.509 certificate mapping).
 
-> [!Note]
-> When a user logs on to an ABAP system via HTTPS with a personal X.509 client certificate, the system must map the certificate to an SAP user ID.
-With the parameter set to 1, the system evaluates rules you define in transaction CERTRULE instead of looking up the old manual table USREXTID.
+##### Setup Rule Based Certificate Mapping: 
+Rule-based certificate mapping (transaction CERTRULE) enables the mapping of users from parts of the subject or the subject alternative name of an X.509 certificate for a given issuer to the user ID or alias of a user master record.
+- [S/4HANA: Configuring Rule-Based Certificate Mapping](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/c339e699f657460088d5b1290ebf8115.html?locale=en-US)
 
 ---
 
