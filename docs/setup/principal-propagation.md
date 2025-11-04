@@ -76,9 +76,9 @@ In this configuration you define amongst other settings the Principal Type. This
 2. Select the <SCC_SUBACCOUNT_DISPLAY_NAME> subaccount.
 3. In the navigation area, choose `Cloud To On-Premise` and open the `Access Control` tab.
 4. Open the existing settings
-5. Select Allow Principal Propagation.
+5. Select `Allow Principal Propagation`.
     <img width="684" height="310" alt="image" src="https://github.com/user-attachments/assets/6fa44279-464f-4515-895c-f426661f99ea" />
-6. 
+6. in the next step select as `Authentication Type` select: `X.509 Client Certificate`.
 
 
 > [!Note]
