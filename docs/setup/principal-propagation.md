@@ -47,7 +47,9 @@ System Level
 
 ## Setup Principal Propagation 🛠️
 
-#### Cloud Connector
+### Cloud Connector
+
+##### XXXX
 1. XXXX
 2. XXXX
 
@@ -56,6 +58,7 @@ System Level
 ##### Configure an ABAP System to Trust the Cloud Connector's System Certificate:
 To enable secure HTTPS communication from the SAP BTP ABAP Environment (or any ABAP system) through the Cloud Connector, the ABAP system must trust the Cloud Connector’s system certificate so it can validate the certificate presented during mutual TLS (mTLS) authentication when opening the tunnel to on-premise systems.
 - [Configure Identity Propagation for HTTPS]()
+- [S/4HANA: Adding the Certificates to the Trust List](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/63005e5ce2a9429db671fda70aa7ad3c.html?locale=en-US)
 
 1. Open the Trust Manager using transaction `STRUST`.
 2. Double-click the `SSL-Server Standard` folder in the menu tree on the left.
@@ -70,6 +73,7 @@ To enable secure HTTPS communication from the SAP BTP ABAP Environment (or any A
 
 ##### Set or verify profile parameter `icm/HTTPS/verify_client`:
 Cloud Connector must present a valid certificate (short-lived user cert) for Principal Propagation to work.
+- [S/4HANA: Enabling the Profile Parameters for Rule-based Certificate Mapping](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/604e55b0c1c54f259bf48a198dacbc1f.html?locale=en-US)
 1. Use ABAP Report `RSPFPAR` (For Selective Parameters)
 2. Input parameter name: `icm/HTTPS/verify_client`.
 3. Click `Execute`.
