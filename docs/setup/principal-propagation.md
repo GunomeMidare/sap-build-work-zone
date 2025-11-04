@@ -60,6 +60,16 @@ In this task, you synchronize the SAP BTP subaccount to support principal propag
 5. Verify that the SAP BTP subaccount is synchronized and trusted.
 
 ##### Configure Access Control
+Configure Access Control (HTTP) is a specific configuration step within the Cloud Connector administration interface. It defines the mappings and permissions for HTTP/HTTPS-based communications to on-premise systems. The goal is to specify which on-premise hosts, ports, and URL paths (resources) can be accessed from SAP BTP, while enforcing security controls like authentication and authorization.
+In this configuration you define amongst other settings the Principal Type. This determines how user identity (principal) is handled during the request—critical for features like single sign-on. Options include:
+
+| **Principal Type**         | **Description**                                                                 | **Use Case**                                      | **Backend Requirements**                     |
+|----------------------------|---------------------------------------------------------------------------------|---------------------------------------------------|----------------------------------------------|
+| **None**                   | No identity propagation; requests are anonymous or use shared credentials.      | Public APIs, technical access, non-user-specific | None                                         |
+| **X.509 Client Certificate** | Propagates identity via client certificates for certificate-based authentication. | Mutual TLS (mTLS), high-security integrations   | Backend must validate client certs (e.g., STRUST) |
+| **Assertion**              | Uses SAML-like assertion tickets (encoded in HTTP headers) for token-based propagation. | SSO with SAP BTP, ABAP, Enterprise Portal       | Trust Cloud Connector CA; parse assertion headers |
+| **SNC**                    | SAP-specific secure channel for Kerberos-like propagation.                     | Secure internal SAP-to-SAP communication        | SNC enabled on backend (e.g., Kerberos, NTLM) |
+
 - [Configure Access Control (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/configure-access-control-http?locale=en-US)
 
 
