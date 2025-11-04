@@ -72,6 +72,17 @@ In this configuration you define amongst other settings the Principal Type. This
 
 - [Configure Access Control (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/configure-access-control-http?locale=en-US)
 
+1. Log on to Cloud Connector.
+2. Select the <SCC_SUBACCOUNT_DISPLAY_NAME> subaccount.
+3. In the navigation area, choose `Cloud To On-Premise` and open the `Access Control` tab.
+4. Open the existing settings
+5. Select Allow Principal Propagation.
+    <img width="684" height="310" alt="image" src="https://github.com/user-attachments/assets/6fa44279-464f-4515-895c-f426661f99ea" />
+6. 
+
+
+> [!Note]
+> Defines what kind of principal is sent to the backend within the HTTP request. For the principal type X.509 Certificate (if a principal is sent from the cloud side), the principal is injected as an HTTP header (SSL_CLIENT_CERT) and forwarded to the backend. There, depending on the backed configuration, it can be used for authentication.
 
 
 - [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
