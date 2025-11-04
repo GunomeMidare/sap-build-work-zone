@@ -139,7 +139,12 @@ When a user logs on to an ABAP system via HTTPS with a personal X.509 client cer
 Rule-based certificate mapping (transaction CERTRULE) enables the mapping of users from parts of the subject or the subject alternative name of an X.509 certificate for a given issuer to the user ID or alias of a user master record.
 - [S/4HANA: Configuring Rule-Based Certificate Mapping](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/c339e699f657460088d5b1290ebf8115.html?locale=en-US)
 - [Rule-Based Certificate Mapping](https://help.sap.com/docs/ABAP_PLATFORM_NEW/e815bb97839a4d83be6c4fca48ee5777/c830fd902dc8473b9e59db1576cc784b.html?locale=en-US)
+
 1. Log on to the SAP S/4HANA system and open the Rule-Based Certificate Mapping `CERTRULE` transaction.
+2. Switch to Edit Mode.
+3. Choose `Import certificate`.
+4. Select the sample certificate that you downloaded from the Cloud Connector and choose `Open`. The details of the certificate will be displayed.
+5. Check whether the Mapping Status changes to `Certificate mapped with rule <x>` and the User Status changes to `Mapped email exists`.
 
 ---
 
