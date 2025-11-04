@@ -98,6 +98,8 @@ In this task, you configure the pattern for the Common Name (CN) that is used fo
 ##### 
 - [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
 
+---
+
 ### ABAP System
 
 ##### Configure an ABAP System to Trust the Cloud Connector's System Certificate:
@@ -136,6 +138,8 @@ When a user logs on to an ABAP system via HTTPS with a personal X.509 client cer
 ##### Setup Rule Based Certificate Mapping: 
 Rule-based certificate mapping (transaction CERTRULE) enables the mapping of users from parts of the subject or the subject alternative name of an X.509 certificate for a given issuer to the user ID or alias of a user master record.
 - [S/4HANA: Configuring Rule-Based Certificate Mapping](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/c339e699f657460088d5b1290ebf8115.html?locale=en-US)
+- [Rule-Based Certificate Mapping](https://help.sap.com/docs/ABAP_PLATFORM_NEW/e815bb97839a4d83be6c4fca48ee5777/c830fd902dc8473b9e59db1576cc784b.html?locale=en-US)
+1. Log on to the SAP S/4HANA system and open the Rule-Based Certificate Mapping `CERTRULE` transaction.
 
 ---
 
