@@ -50,11 +50,19 @@ System Level
 ### Cloud Connector
 
 ##### Set Up Trust for Principal Propagation > Configure Trusted Entities in the Cloud Connector
-In this task, you synchronize the SAP BTP subaccount to support principal propagation. By default, the Cloud Connector does not trust any entity that issues tokens for principal propagation.
+In this task, you synchronize the SAP BTP subaccount to support principal propagation. By default, the Cloud Connector does not trust any entity that issues tokens for principal propagation. You establish trust to the Identity Authentication service of your SAP BTP subaccount.
 - [CC: Setting Up Trust for Principal Propagation](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/b559acddd01241c0ab0cce5a61862be3.html?locale=en-US)
 - [Set Up Trust](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/set-up-trust-for-principal-propagation?locale=en-US)
-1. XXXX
-2. XXXX
+1. Log on to Cloud Connector.
+2. Select the <SCC_SUBACCOUNT_DISPLAY_NAME> subaccount.
+3. In the navigation area, choose `Cloud To On-Premise` and open the `Principal Propagation` tab.
+4. Choose `Synchronise`.
+5. Verify that the SAP BTP subaccount is synchronized and trusted.
+
+##### Configure Access Control
+- [Configure Access Control (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/configure-access-control-http?locale=en-US)
+
+
 
 - [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
 
