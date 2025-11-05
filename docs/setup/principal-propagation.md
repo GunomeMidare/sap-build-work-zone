@@ -29,15 +29,15 @@ The goal of this file is to document how to setup Prinicpal Propagation for **SA
 
 ## Quick Check List 📝
 #### Cloud Connector
+System Level
+- [ ] Make sure the system certificate exists. The SSL handshake between SAP Cloud Connector and the ABAP system is performed through the system certificate. ⚪
+- [ ] Configure a CA certificate (or make sure it exists). The SAP Cloud Connector uses the configured CA certificate to issue short-lived certificates for logging on to the same identity in the backend as is logged on to in the cloud.
+
 Subaccount Level
 - [ ] Connect Cloud Connector to SAP BTP subaccount. 🟢
 - [ ] Set Up Trust for Principal Propagation - Configure Trusted Entities in the Cloud Connector. ⚪
 - [ ] Make sure you choose the principal type X.509 Certificate (strict usage) in the corresponding system mapping. ⚪
 - [ ] Configure the pattern for the Common Name (CN) that is used for the short-lived certificates for principal propagation. ⚪
-
-System Level
-- [ ] Make sure the system certificate exists. The SSL handshake between SAP Cloud Connector and the ABAP system is performed through the system certificate. ⚪
-- [ ] Configure a CA certificate (or make sure it exists). The SAP Cloud Connector uses the configured CA certificate to issue short-lived certificates for logging on to the same identity in the backend as is logged on to in the cloud.
 
 #### ABAP System
 - [ ] Configure the ABAP system to trust the system certificate of SAP Cloud Connector. If the system certificate is signed by CA, then you need to import the certificate into the SSL trust service list. ⚪
@@ -59,6 +59,12 @@ System Level
 ## Setup Principal Propagation 🛠️
 
 ### Cloud Connector
+
+#### Install Cloud Connector System Certificate
+To set up a mutual authentication between the Cloud Connector and any backend system it connects to, you can import an X.509 client certificate into the Cloud Connector. The Cloud Connector then uses the so-called system certificate for all HTTPS requests to backends that request or require a client certificate. The certificate authority (CA) that signed the Cloud Connector's system certificate must be trusted by all backend systems to which the Cloud Connector is supposed to connect.
+- [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
+
+
 
 ####  Set Up Trust for Principal Propagation > Configure Trusted Entities in the Cloud Connector
 In this task, you synchronize the SAP BTP subaccount to support principal propagation. By default, the Cloud Connector does not trust any entity that issues tokens for principal propagation. You establish trust to the Identity Authentication service of your SAP BTP subaccount.
@@ -124,15 +130,13 @@ In this task, you configure the pattern for the Common Name (CN) that is used fo
 
 #### Create & Download Short-Lived Sample Certificate
 By choosing Generate Sample Certificate you can create a sample certificate that looks like one of the short-lived certificates created at runtime. You can use this certificate to, for example, generate user mapping rules in the target system, via transaction CERTRULE in an ABAP system. If your subject pattern contains variable fields, a wizard lets you provide meaningful values for each of them and eventually you can save the sample certificate in DER format. This certificate is not the actual short-lived certificate used in runtime (which is dynamically generated per user session); instead, it's a sample for configuration purposes. 
+- [CC: Exporting the Principal Propagation Sample Certificate](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/283f6f6942244a4fbe15a44f18ca081b.html?locale=en-US)
+
 
 1. Click `Generate Sample Certificate`.
 
     Example:
     <img width="1267" height="286" alt="image" src="https://github.com/user-attachments/assets/6d140b4b-cbf2-4943-9c95-72ab2ff0e3e9" />
-
-
-##### 
-- [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
 
 ---
 
