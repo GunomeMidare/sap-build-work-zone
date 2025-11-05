@@ -15,12 +15,16 @@ The goal of this file is to document how to setup Prinicpal Propagation for **SA
 - [3416510 - Configure Runtime destination for on-prem solution SAP Build Work Zone, standard edition](https://me.sap.com/notes/3416510/E)
 - [3657871 - [Cloud Integration] Principal Propagation for on-premise S4, explained](https://me.sap.com/notes/3657871/E)
 - [3209209 - Client Certificate Authentication(X.509) fails with error: 'no applicable certificate mapping rule ](https://me.sap.com/notes/3209209/E)
+- [2462533 - Configuring Principal Propagation to an ABAP System for HTTPS in SAP Business Technology Pl](https://me.sap.com/notes/2462533/E)
 
 ## Prerequisites 📝
 - SAP IAS (Identity Authentication Service) configured as the IdP for BTP.
 - Cloud Connector is installed and linked to the BTP subaccount.
 - Access to transactions RZ10, STRUST, CERTRULE, SMICM on the on-premise ABAP system.
 - Administrator access to the Cloud Connector.
+- Authorization restart Internet Communication Manager (ICM) to enable the ICM parameters.
+- 
+  
 ---
 
 ## Quick Check List 📝
@@ -56,7 +60,7 @@ System Level
 
 ### Cloud Connector
 
-##### Set Up Trust for Principal Propagation > Configure Trusted Entities in the Cloud Connector
+####  Set Up Trust for Principal Propagation > Configure Trusted Entities in the Cloud Connector
 In this task, you synchronize the SAP BTP subaccount to support principal propagation. By default, the Cloud Connector does not trust any entity that issues tokens for principal propagation. You establish trust to the Identity Authentication service of your SAP BTP subaccount.
 - [CC: Setting Up Trust for Principal Propagation](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/b559acddd01241c0ab0cce5a61862be3.html?locale=en-US)
 - [Set Up Trust](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/set-up-trust-for-principal-propagation?locale=en-US)
@@ -70,7 +74,7 @@ In this task, you synchronize the SAP BTP subaccount to support principal propag
     <img width="1277" height="380" alt="image" src="https://github.com/user-attachments/assets/f4ccc11c-c2f2-4b49-a61c-e20f76ba97fb" />
 
 
-##### Configure Access Control
+####  Configure Access Control
 Configure Access Control (HTTP) is a specific configuration step within the Cloud Connector administration interface. It defines the mappings and permissions for HTTP/HTTPS-based communications to on-premise systems. The goal is to specify which on-premise hosts, ports, and URL paths (resources) can be accessed from SAP BTP, while enforcing security controls like authentication and authorization.
 In this configuration you define amongst other settings the Principal Type. This determines how user identity (principal) is handled during the request—critical for features like single sign-on. Options include:
 
@@ -94,14 +98,37 @@ In this configuration you define amongst other settings the Principal Type. This
 > [!Note]
 > Defines what kind of principal is sent to the backend within the HTTP request. For the principal type X.509 Certificate (if a principal is sent from the cloud side), the principal is injected as an HTTP header (SSL_CLIENT_CERT) and forwarded to the backend. There, depending on the backed configuration, it can be used for authentication.
 
-##### Configure Subject Patern
+#### Configure Subject Patern
 In this task, you configure the pattern for the Common Name (CN) that is used for the short-lived certificates for principal propagation.
 - [Configure Subject Patern](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/configure-subject-patterns-for-principal-propagation?locale=en-US)
 - [CC: Configuring the Principal Propagation Subject Pattern](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/bb66d36ae7184a8f811ffb7d9ee3d135.html?locale=en-US)
 
-##### Create & Download Short-Lived Sample Certificate
-The short-lived sample certificate in SAP Cloud Connector (SCC) is generated in the context of principal propagation setup over HTTPS. It serves as a template to create certificate mapping rules (e.g., via transaction CERTRULE) in your on-premise ABAP backend systems. This certificate is not the actual short-lived certificate used in runtime (which is dynamically generated per user session); instead, it's a sample for configuration purposes. 
+1. Log on to the Cloud Connector .
+2. In the navigation area, choose `Configuration` and open the `On Premise` tab.
+3. Scroll to the `Pricipal Propagation` section and choode `Edit`.
+4. On the Edit Pricipal Propagation screen, enter the following values:
 
+| Setting | Value | Notes |
+|-------|--------|-------|
+| **Common Name (CN)** | `${email}` |  |
+| **Expiration Tolerance (h)** | `2` | The length of time in hours, that an application can use a principal issued for a user after the token from cloud side has expired. The minimum value for this attribute is 0, and the maximum 336 (14 days). |
+| **Certificate Validity (min)** | `60` | The length of time in minutes, that a certificate generated for principal propagation can authenticate against the back end. You can reuse a previously generated certificate to improve performance. The minimum value for this attribute is 0, and the maximum 43200 (30 days).  | 
+
+5. Click `Save`.
+
+    Example:
+    <img width="1513" height="178" alt="image" src="https://github.com/user-attachments/assets/96fc7913-7e19-472a-a5d6-ed14a93d672c" />
+
+
+
+
+#### Create & Download Short-Lived Sample Certificate
+By choosing Generate Sample Certificate you can create a sample certificate that looks like one of the short-lived certificates created at runtime. You can use this certificate to, for example, generate user mapping rules in the target system, via transaction CERTRULE in an ABAP system. If your subject pattern contains variable fields, a wizard lets you provide meaningful values for each of them and eventually you can save the sample certificate in DER format. This certificate is not the actual short-lived certificate used in runtime (which is dynamically generated per user session); instead, it's a sample for configuration purposes. 
+
+1. Click `Generate Sample Certificate`.
+
+    Example:
+    <img width="1267" height="286" alt="image" src="https://github.com/user-attachments/assets/6d140b4b-cbf2-4943-9c95-72ab2ff0e3e9" />
 
 
 ##### 
