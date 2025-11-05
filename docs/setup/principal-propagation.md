@@ -66,6 +66,10 @@ In this task, you synchronize the SAP BTP subaccount to support principal propag
 4. Choose `Synchronise`.
 5. Verify that the SAP BTP subaccount is synchronized and trusted.
 
+    Example:
+    <img width="1277" height="380" alt="image" src="https://github.com/user-attachments/assets/f4ccc11c-c2f2-4b49-a61c-e20f76ba97fb" />
+
+
 ##### Configure Access Control
 Configure Access Control (HTTP) is a specific configuration step within the Cloud Connector administration interface. It defines the mappings and permissions for HTTP/HTTPS-based communications to on-premise systems. The goal is to specify which on-premise hosts, ports, and URL paths (resources) can be accessed from SAP BTP, while enforcing security controls like authentication and authorization.
 In this configuration you define amongst other settings the Principal Type. This determines how user identity (principal) is handled during the request—critical for features like single sign-on. Options include:
