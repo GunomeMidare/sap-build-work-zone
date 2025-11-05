@@ -135,8 +135,16 @@ Cloud Connector must present a valid certificate (short-lived user cert) for Pri
 In SAP Cloud Connector scenarios, principal propagation relies on the X.509 client certificate (carrying the user's identity) being forwarded from SAP Build Work Zone to an on-premise ABAP system. The Cloud Connector acts as a reverse proxy for this tunnel, so the ABAP system's icm/trusted_reverse_proxy profile parameter must be configured (typically set to PREFIX=<connector-cert-thumbprint>). This explicitly designates the Cloud Connector as a trusted proxy, allowing ABAP to accept and propagate the original client certificate instead of treating the connector's request as anonymous. Without it, certificate forwarding fails, breaking user context propagation.
 - [S/4HANA: Enabling the Profile Parameters for Rule-based Certificate Mapping](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/604e55b0c1c54f259bf48a198dacbc1f.html?locale=en-US)
 
-1. Enter <TRUSTED_REVERSE_PROXY_DETAILS>
-2. Restart the Internet Communication Manager (ICM) to apply the changes.
+1. Log on to the SAP S/4HANA system and open the Maintain Profile Parameter `RZ10` transaction.
+2. Select the `DEFAULT` profile.
+3. In the Edit Profile group, select the `Extended maintenance` radio button and choose `Change`.
+4. On the Maintain Profile 'DEFAULT' screen, create or update the following parameter `icm/trusted_reverse_proxy_<x>`.
+
+> [!NOTE]
+> Enter a free index for <x>, for example icm/trusted_reverse_proxy_1.
+   
+5. Enter <TRUSTED_REVERSE_PROXY_DETAILS>
+6. Restart the Internet Communication Manager (ICM) to apply the changes.
 
 > [!NOTE]
 > The placeholder <TRUSTED_REVERSE_PROXY_DETAILS> refers to the value string that defines the trusted proxy's identity based on its system certificate's Subject and Issuer Distinguished Names (DNs). This tells ICM: "Accept certificate-forwarding only from this specific proxy."
