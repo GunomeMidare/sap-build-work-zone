@@ -94,3 +94,26 @@ When a user (`Alice_BTP`) authenticates and accesses an **on-premise-integrated 
 **End-to-End Identity: `Alice_BTP` → `alice@company.com` → `Alice_S4`**
 
 ---
+
+> [!IMPORTANT]
+> # **SAP Principal Propagation Flow**  
+> **Short-Lived Certificate Trust via Cloud Connector**
+
+---
+
+### **End-to-End Trust Flow**
+
+| Step | **Who** | **What Happens** | **Trust Mechanism** |
+|------|--------|------------------|---------------------|
+| **1** | **SAP Build Work Zone / BTP** | Sends **short-lived user X.509 cert** (or SAML token) | **Signed by BTP CA** |
+| **2** | **Cloud Connector (SCC)** | Validates token → extracts/forwards **user cert** | Uses **BTP CA** (imported in SCC) |
+| **3** | **Cloud Connector → ABAP** | Sends HTTPS request with `SSL_CLIENT_CERT` | Tunnel secured by **SCC System Cert** |
+| **4** | **ABAP ICM** | Sees: *"Request from trusted reverse proxy"* | Uses `icm/trusted_reverse_proxy_0` |
+| **5** | **ABAP** | **Accepts user cert** even if **not in STRUST** | Because **SCC is trusted** |
+| **6** | **ABAP Login Manager** | Maps `CN=user@company.com` → ABAP user | Via **CERTRULE** + `login/certificate_mapping_rulebased = 1` |
+
+---
+
+> [!TIP]
+> **ABAP trusts the *Cloud Connector*, not the user certificate.**  
+> Short-lived certs work **without STRUST import** — as long as SCC is trusted.
