@@ -58,13 +58,18 @@ Subaccount Level
 
 ## Setup Principal Propagation 🛠️
 
-### Cloud Connector
+### Cloud Connector - System Level
 
 #### Install Cloud Connector System Certificate
 To set up a mutual authentication between the Cloud Connector and any backend system it connects to, you can import an X.509 client certificate into the Cloud Connector. The Cloud Connector then uses the so-called system certificate for all HTTPS requests to backends that request or require a client certificate. The certificate authority (CA) that signed the Cloud Connector's system certificate must be trusted by all backend systems to which the Cloud Connector is supposed to connect.
 - [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
 
+#### Configure a CA certificate (or make sure it exists)
+Install and configure an X.509 certificate to enable support for principal propagation in the Cloud Connector.
+- [Configure a CA Certificate](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/configure-ca-certificate-for-principal-propagation?locale=en-US)
+- [3390881 - SAP Cloud Connector: "No CA certificate available, which is required for supporting Principal ](https://me.sap.com/notes/3390881/E)
 
+### Cloud Connector - Subaccount Level
 
 ####  Set Up Trust for Principal Propagation > Configure Trusted Entities in the Cloud Connector
 In this task, you synchronize the SAP BTP subaccount to support principal propagation. By default, the Cloud Connector does not trust any entity that issues tokens for principal propagation. You establish trust to the Identity Authentication service of your SAP BTP subaccount.
@@ -78,7 +83,6 @@ In this task, you synchronize the SAP BTP subaccount to support principal propag
 
     Example:
     <img width="1277" height="380" alt="image" src="https://github.com/user-attachments/assets/f4ccc11c-c2f2-4b49-a61c-e20f76ba97fb" />
-
 
 ####  Configure Access Control
 Configure Access Control (HTTP) is a specific configuration step within the Cloud Connector administration interface. It defines the mappings and permissions for HTTP/HTTPS-based communications to on-premise systems. The goal is to specify which on-premise hosts, ports, and URL paths (resources) can be accessed from SAP BTP, while enforcing security controls like authentication and authorization.
