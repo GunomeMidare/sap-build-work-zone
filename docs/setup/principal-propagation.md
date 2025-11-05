@@ -189,7 +189,7 @@ SUBJECT="CN=<common_name>, [other_DN_parts]", ISSUER="CN=<issuer_common_name>, [
 > [!TIP]
 > Always copy **SUBJECT** and **ISSUER** directly from **STRUST** after importing the SCC certificate — never guess or shorten! The SUBJECT and ISSUER values you use in icm/trusted_reverse_proxy_<x> must be exactly the same as those shown in the Cloud Connector system certificate when imported into STRUST on the ABAP backend.
 
-6. Restart the Internet Communication Manager (ICM) to apply the changes.
+6. Restart the Internet Communication Manager (ICM) to apply the changes. Click on `Administration -> ICM -> Exit Soft -> Global`. This will restart ICM and make the parameters take effect.
 
 > [!NOTE]
 > The placeholder <TRUSTED_REVERSE_PROXY_DETAILS> refers to the value string that defines the trusted proxy's identity based on its system certificate's Subject and Issuer Distinguished Names (DNs). This tells ICM: "Accept certificate-forwarding only from this specific proxy."
