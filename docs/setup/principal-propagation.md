@@ -40,7 +40,7 @@ System Level
 - [ ] Set the profile parameter in the instance profile: `icm/HTTPS/verify_client` to `Verify_Client=1`. 🟢
 - [ ] Setup Rule Based User mapping – rule-based mapping of certificates is the recommended approach (based on the `CERTRULE` transaction). ⚪
     - [ ] Set the profile parameter in the instance profile: `login/certificate_mapping_rulebased` to `1`. ⚪
-- [ ] icm/trusted_reverse_proxy_<x> in S4 must be configured. ⚪
+- [ ] Set the profile parameter `icm/trusted_reverse_proxy_<x>` with values of the Cloud Connector system certificate imported in STRUST. ⚪
 - [ ] Rule Based Certificate Mapping for the user identity must be configured. ⚪
 - [ ] Mapped user must has the same, unique identifier. ⚪
 
@@ -144,6 +144,20 @@ In SAP Cloud Connector scenarios, principal propagation relies on the X.509 clie
 > Enter a free index for <x>, for example icm/trusted_reverse_proxy_1.
    
 5. Enter <TRUSTED_REVERSE_PROXY_DETAILS>
+
+```
+SUBJECT="CN=<common_name>, [other_DN_parts]", ISSUER="CN=<issuer_common_name>, [other_DN_parts]"
+```
+| Component | Description | Example |
+|---------|-------------|---------|
+| **SUBJECT** | The Distinguished Name (DN) of the certificate's **subject** — usually the Cloud Connector hostname. | `CN=scc-host.example.com, L=WDF, O=SAP, C=DE` |
+| **ISSUER** | The DN of the **issuing authority**. For self-signed SCC certificates, it matches the SUBJECT. | `CN=scc-host.example.com, L=WDF, O=SAP, C=DE` |
+| **Quotes** | Must use **straight double quotes** (`"`) around each DN string. | `SUBJECT="CN=scc-host.example.com, ..."` |
+| **DN Components** | Include **all** parts (CN, L, O, C, etc.) for exact match. Partial matches may work but are less secure. | `CN=..., L=WDF, O=SAP, C=DE` |
+
+> [!TIP]
+> Always copy **SUBJECT** and **ISSUER** directly from **STRUST** after importing the SCC certificate — never guess or shorten! The SUBJECT and ISSUER values you use in icm/trusted_reverse_proxy_<x> must be exactly the same as those shown in the Cloud Connector system certificate when imported into STRUST on the ABAP backend.
+
 6. Restart the Internet Communication Manager (ICM) to apply the changes.
 
 > [!NOTE]
