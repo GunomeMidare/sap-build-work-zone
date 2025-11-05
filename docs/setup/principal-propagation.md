@@ -19,7 +19,7 @@ The goal of this file is to document how to setup Prinicpal Propagation for **SA
 ## Prerequisites 📝
 - SAP IAS (Identity Authentication Service) configured as the IdP for BTP.
 - Cloud Connector is installed and linked to the BTP subaccount.
-- Access to transactions RZ10, STRUST, CERTRULE on the on-premise ABAP system.
+- Access to transactions RZ10, STRUST, CERTRULE, SMICM on the on-premise ABAP system.
 - Administrator access to the Cloud Connector.
 ---
 
@@ -107,7 +107,7 @@ The short-lived sample certificate in SAP Cloud Connector (SCC) is generated in 
 
 ### ABAP System
 
-##### Configure an ABAP System to Trust the Cloud Connector's System Certificate:
+#### Configure an ABAP System to Trust the Cloud Connector's System Certificate:
 To enable secure HTTPS communication from the SAP BTP ABAP Environment (or any ABAP system) through the Cloud Connector, the ABAP system must trust the Cloud Connector’s system certificate so it can validate the certificate presented during mutual TLS (mTLS) authentication when opening the tunnel to on-premise systems.
 - [Configure Identity Propagation for HTTPS]()
 - [S/4HANA: Adding the Certificates to the Trust List](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/63005e5ce2a9429db671fda70aa7ad3c.html?locale=en-US)
@@ -120,7 +120,7 @@ To enable secure HTTPS communication from the SAP BTP ABAP Environment (or any A
 6. If you are sure that you are importing the correct certificate, you can integrate the certificate into the certificate list by choosing the `Add to Certificate List` button.
 
 
-##### Set or verify profile parameter `icm/HTTPS/verify_client`:
+#### Set or verify profile parameter `icm/HTTPS/verify_client`:
 Cloud Connector must present a valid certificate (short-lived user cert) for Principal Propagation to work.
 - [S/4HANA: Enabling the Profile Parameters for Rule-based Certificate Mapping](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/604e55b0c1c54f259bf48a198dacbc1f.html?locale=en-US)
 1. Use ABAP Report `RSPFPAR` (For Selective Parameters)
@@ -131,7 +131,20 @@ Cloud Connector must present a valid certificate (short-lived user cert) for Pri
 > [!Note]
 > Client certificate is required — the server demands a valid X.509 certificate from the client (Cloud Connector) during TLS handshake. 
 
-##### Set or verify profile parameter `login/certificate_mapping_rulebased`: 
+#### Set or verify profile parameter `icm/trusted_reverse_proxy_<x>`: 
+In SAP Cloud Connector scenarios, principal propagation relies on the X.509 client certificate (carrying the user's identity) being forwarded from SAP Build Work Zone to an on-premise ABAP system. The Cloud Connector acts as a reverse proxy for this tunnel, so the ABAP system's icm/trusted_reverse_proxy profile parameter must be configured (typically set to PREFIX=<connector-cert-thumbprint>). This explicitly designates the Cloud Connector as a trusted proxy, allowing ABAP to accept and propagate the original client certificate instead of treating the connector's request as anonymous. Without it, certificate forwarding fails, breaking user context propagation.
+- [S/4HANA: Enabling the Profile Parameters for Rule-based Certificate Mapping](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/604e55b0c1c54f259bf48a198dacbc1f.html?locale=en-US)
+
+1. Enter <TRUSTED_REVERSE_PROXY_DETAILS>
+2. Restart the Internet Communication Manager (ICM) to apply the changes.
+
+> [!NOTE]
+> The placeholder <TRUSTED_REVERSE_PROXY_DETAILS> refers to the value string that defines the trusted proxy's identity based on its system certificate's Subject and Issuer Distinguished Names (DNs). This tells ICM: "Accept certificate-forwarding only from this specific proxy."
+
+> [!NOTE]
+> Log on to the SAP S/4HANA system and open the ICM Monitor `SMICM` transaction. Choose `Goto > Parameters` and verify that the parameters `icm/HTTPS/verify_client` and `icm/trusted_reverse_proxy_<x>` are active.
+
+#### Set or verify profile parameter `login/certificate_mapping_rulebased`: 
 When a user logs on to an ABAP system via HTTPS with a personal X.509 client certificate, the system must map the certificate to an SAP user ID. With the parameter set to 1, the system evaluates rules you define in transaction CERTRULE instead of looking up the old manual table USREXTID.
 - [Creating Rules for Certificate Mapping](https://help.sap.com/docs/SAP_NETWEAVER_AS_ABAP_751_IP/d528eef3dca14679bcb47b069aa17a9d/7c6d4b04370e40319ad790b554aa9a0b.html?version=7.51.0&locale=en-US)
 
@@ -140,7 +153,7 @@ When a user logs on to an ABAP system via HTTPS with a personal X.509 client cer
 3. Click `Execute`.
 4. Verify that the value is `1` (enable rule-based X.509 certificate mapping).
 
-##### Setup Rule Based Certificate Mapping: 
+#### Setup Rule Based Certificate Mapping: 
 Rule-based certificate mapping (transaction CERTRULE) enables the mapping of users from parts of the subject or the subject alternative name of an X.509 certificate for a given issuer to the user ID or alias of a user master record.
 - [S/4HANA: Configuring Rule-Based Certificate Mapping](https://help.sap.com/docs/CIAS%20FES%202020/ecb81b5bfce440ca8e7e7c9ad58fcf3a/c339e699f657460088d5b1290ebf8115.html?locale=en-US)
 - [Rule-Based Certificate Mapping](https://help.sap.com/docs/ABAP_PLATFORM_NEW/e815bb97839a4d83be6c4fca48ee5777/c830fd902dc8473b9e59db1576cc784b.html?locale=en-US)
@@ -153,7 +166,7 @@ Rule-based certificate mapping (transaction CERTRULE) enables the mapping of use
 
 ---
 
-#### SAP BTP Subaccount
-##### Configure Runtime destination for SSO
+### SAP BTP Subaccount
+#### Configure Runtime destination for SSO
 1. Navigate to the runtime destination.
 2. As `Authentication Method` select `Principal Propagation`.
