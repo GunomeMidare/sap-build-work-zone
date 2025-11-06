@@ -8,14 +8,20 @@ The goal of this file is to document how to setup Prinicpal Propagation for **SA
 - [SAP Help: Configure SSO](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/configure-sso?locale=en-US)
 - [Principal Propagation from SAP BTP Applications to On-Premise Systems Using Corporate IdP Tokens](https://help.sap.com/docs/btp/sap-business-technology-platform/configure-principal-propagation-from-btp-applications-to-on-premise-systems-using-corporate-idp-tokens?locale=en-US)
 - [How to troubleshoot Cloud Connector principal propagation over HTTPS](https://help.sap.com/docs/SUPPORT_CONTENT/appservices/3361376259.html?locale=en-US)
+- [Explaining the Authentication Flow of SAP Build Work Zone](https://learning.sap.com/learning-journeys/implement-and-administer-sap-build-work-zone/explaining-the-authentication-flow-of-sap-build-work-zone)
+- 
 
-#### SAP Notes
+#### SAP Notes General
 - [3580783 - Logon Popup Appears in SAP Build Work Zone](https://me.sap.com/notes/3580783/E)
 - [3509758 - The Cloud Connector has not been configured for principal propagation. Please configure it or](https://me.sap.com/notes/3509758/E)
 - [3416510 - Configure Runtime destination for on-prem solution SAP Build Work Zone, standard edition](https://me.sap.com/notes/3416510/E)
 - [3657871 - [Cloud Integration] Principal Propagation for on-premise S4, explained](https://me.sap.com/notes/3657871/E)
 - [3209209 - Client Certificate Authentication(X.509) fails with error: 'no applicable certificate mapping rule ](https://me.sap.com/notes/3209209/E)
 - [2462533 - Configuring Principal Propagation to an ABAP System for HTTPS in SAP Business Technology Pl](https://me.sap.com/notes/2462533/E)
+
+#### Troubleshooting
+- [2333324 - Tutorial - "Tracing and troubleshooting security events in http communication with the AS ABAP" [VIDEO]](https://me.sap.com/notes/0002333324)
+
 
 ## Prerequisites 📝
 - SAP IAS (Identity Authentication Service) configured as the IdP for BTP.
