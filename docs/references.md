@@ -37,6 +37,8 @@
 - [3563568 - Standard default site URL of SAP Build Work Zone can be accessed and will not redirect to Custom Domain URL even if Custom Domain has been fully activated](https://me.sap.com/notes/3563568/E)
 - [3672685 - Seamless Navigation from Work Zone to SuccessFactors is not Working](https://me.sap.com/notes/3672685/E)
 
+<details id=0>
+
 ### Product Specific 📰
 
 #### S/4HANA
@@ -48,3 +50,5 @@
 
 #### Task Center
 - [SAP Help: Integration with SAP Task Center](https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-work-zone-standard-edition/integration-with-sap-task-center?locale=en-US)
+
+</details>
