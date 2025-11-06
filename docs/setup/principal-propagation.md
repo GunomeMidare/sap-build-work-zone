@@ -22,14 +22,12 @@ The goal of this file is to document how to setup Prinicpal Propagation for **SA
 #### Troubleshooting
 - [2333324 - Tutorial - "Tracing and troubleshooting security events in http communication with the AS ABAP" [VIDEO]](https://me.sap.com/notes/0002333324)
 
-
 ## Prerequisites 📝
 - SAP IAS (Identity Authentication Service) configured as the IdP for BTP.
 - Cloud Connector is installed and linked to the BTP subaccount.
 - Access to transactions RZ10, STRUST, CERTRULE, SMICM on the on-premise ABAP system.
 - Administrator access to the Cloud Connector.
 - Authorization restart Internet Communication Manager (ICM) to enable the ICM parameters.
-- 
   
 ---
 
@@ -134,8 +132,6 @@ In this task, you configure the pattern for the Common Name (CN) that is used fo
 
     Example:
     <img width="1513" height="178" alt="image" src="https://github.com/user-attachments/assets/96fc7913-7e19-472a-a5d6-ed14a93d672c" />
-
-
 
 
 #### Create & Download Short-Lived Sample Certificate
