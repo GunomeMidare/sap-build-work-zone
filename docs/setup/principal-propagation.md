@@ -10,6 +10,8 @@ The goal of this file is to document how to setup Prinicpal Propagation for **SA
 - [How to troubleshoot Cloud Connector principal propagation over HTTPS](https://help.sap.com/docs/SUPPORT_CONTENT/appservices/3361376259.html?locale=en-US)
 - [Explaining the Authentication Flow of SAP Build Work Zone](https://learning.sap.com/learning-journeys/implement-and-administer-sap-build-work-zone/explaining-the-authentication-flow-of-sap-build-work-zone)
 - 
+#### Web Dispatcher
+- [Configure SAP Web Dispatcher to Trust the Cloud Connector's System Certificate](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/configure-principal-propagation-via-sap-web-dispatcher?locale=en-US#configure-sap-web-dispatcher-to-trust-the-cloud-connector's-system-certificate)
 
 #### SAP Notes General
 - [3580783 - Logon Popup Appears in SAP Build Work Zone](https://me.sap.com/notes/3580783/E)
