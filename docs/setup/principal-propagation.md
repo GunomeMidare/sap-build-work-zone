@@ -18,6 +18,7 @@ The goal of this file is to document how to setup Prinicpal Propagation for **SA
 - [3657871 - [Cloud Integration] Principal Propagation for on-premise S4, explained](https://me.sap.com/notes/3657871/E)
 - [3209209 - Client Certificate Authentication(X.509) fails with error: 'no applicable certificate mapping rule ](https://me.sap.com/notes/3209209/E)
 - [2462533 - Configuring Principal Propagation to an ABAP System for HTTPS in SAP Business Technology Pl](https://me.sap.com/notes/2462533/E)
+- [3452851 - Setting up Principal Propagation step-by-step from SAP Cloud Connector](https://me.sap.com/notes/0003452851)
 
 #### Troubleshooting
 - [2333324 - Tutorial - "Tracing and troubleshooting security events in http communication with the AS ABAP" [VIDEO]](https://me.sap.com/notes/0002333324)
