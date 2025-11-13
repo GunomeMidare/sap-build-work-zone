@@ -11,7 +11,9 @@ The goal of this file is to document how to setup Prinicpal Propagation for **SA
 - [Explaining the Authentication Flow of SAP Build Work Zone](https://learning.sap.com/learning-journeys/implement-and-administer-sap-build-work-zone/explaining-the-authentication-flow-of-sap-build-work-zone)
 - 
 #### Web Dispatcher
+- When using a SAP Web Dispatcher, the ABAP backend must trust the SAP Web Dispatcher instead of the Cloud Connector.
 - [Configure SAP Web Dispatcher to Trust the Cloud Connector's System Certificate](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/configure-principal-propagation-via-sap-web-dispatcher?locale=en-US#configure-sap-web-dispatcher-to-trust-the-cloud-connector's-system-certificate)
+- [Forward SSL Certificates for X.509 Authentication](https://help.sap.com/docs/ABAP_PLATFORM_NEW/683d6a1797a34730a6e005d1e8de6f22/2a6cec67c50842aab1444f7dfd0257e1.html?locale=en-US)
 
 #### SAP Notes General
 - [3580783 - Logon Popup Appears in SAP Build Work Zone](https://me.sap.com/notes/3580783/E)
