@@ -67,6 +67,7 @@ Subaccount Level
 #### Install Cloud Connector System Certificate
 To set up a mutual authentication between the Cloud Connector and any backend system it connects to, you can import an X.509 client certificate into the Cloud Connector. The Cloud Connector then uses the so-called system certificate for all HTTPS requests to backends that request or require a client certificate. The certificate authority (CA) that signed the Cloud Connector's system certificate must be trusted by all backend systems to which the Cloud Connector is supposed to connect.
 - [Initial Configuration (HTTP)](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/initial-configuration-http?locale=en-US#loio3f974eae3cba4dafa274ec59f69daba6__section_N1001A_N10011_N10001)
+- [Creating the Cloud Connector System Certificate](https://help.sap.com/docs/PRODUCTION_CONNECTOR/199521d998ec49f48311f59e13f8ee85/68c4701bbce1423dbd7cc39393d817a1.html?locale=en-US)
 
 #### Configure a CA certificate (or make sure it exists)
 Install and configure an X.509 certificate to enable support for principal propagation in the Cloud Connector.
